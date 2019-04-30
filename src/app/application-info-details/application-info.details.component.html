@@ -190,7 +190,7 @@
               </label>
             </div>
           </div>
-          <div *ngIf="isNoDinNpn()">
+          <div *ngIf="hasDrug()">
             <div class="row">
               <div class="col-xs-12 form-group alert alert-info" role="alert">
                      <span>
@@ -382,8 +382,7 @@
           <h3 class="panel-title">{{'heading.devices'|translate}}</h3>
         </header>
         <div class="panel-body">
-          <device-list  (errors)="processDeviceErrors($event)"
-                         [deviceModel]="deviceModel"></device-list>
+          <device-list  (errors)="processDeviceErrors($event)" [deviceModel]="deviceModel"></device-list>
         </div>
       </section>
     </div>
@@ -399,11 +398,17 @@
               <label for="declarationConformity" class="required full-width">
                 <span class="field-name" i18n>{{'conformity.declaration' |translate}}</span>
                 <strong class="required" i18n>{{'commmon.required.bracket'|translate}}</strong>
+                <sup id="ap5-rf">
+                  <a class="fn-lnk" href="#ap5"><span class="wb-inv">{{'instruction'|translate}}</span>5</a>
+                </sup>
                 <control-messages *ngIf="appInfoFormLocalModel.controls.declarationConformity.invalid"
                                   [showError]="showFieldErrors"
                                   [control]="appInfoFormLocalModel.controls.declarationConformity"
-                                  controlId="declarationConformity" label="conformity.declaration" parentId="appInfoDetails"
-                                  parentLabel="Application Information"></control-messages>
+                                  controlId="declarationConformity"
+                                  label="conformity.declaration"
+                                  parentId="appInfoDetails"
+                                  parentLabel="Application Information">
+                </control-messages>
                 <select id="declarationConformity" required class="form-control" (blur)="onblur()" formControlName="declarationConformity">
                   <option label=" " value=""></option>
                   <option *ngFor="let opt of yesNoList" [ngValue]="opt"> {{opt | translate}}</option>
@@ -445,8 +450,9 @@
               </label>
             </div>
           </div>
-          <div *ngIf="isRecombinant()" class="row">
-            <div class="form-group col-xs-12" >
+         <!-- <div *ngIf="isRecombinant()" class="row"> -->
+          <div class="row">
+          <div class="form-group col-xs-12" >
               <label for="isAnimalHumanSourced" class="required full-width">
                 <span class="field-name" i18n>{{'contain.material' |translate}}</span>
                 <strong class="required" i18n>{{'commmon.required.bracket'|translate}}</strong>
@@ -490,7 +496,8 @@
                                   [control]="appInfoFormLocalModel.controls.hasMaterial"
                                   controlId="materialList" label="heading.material"
                                   parentId="materialList"
-                                  parentLabel="Application Information"></control-messages>
+                                  parentLabel="Application Information">
+                </control-messages>
                 <input id="hasMaterial" type="hidden" class="form-control full-width"
                        formControlName="hasMaterial"/>
               </header>

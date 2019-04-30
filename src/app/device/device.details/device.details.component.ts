@@ -94,7 +94,7 @@ export class DeviceDetailsComponent implements OnInit, OnChanges, AfterViewInit 
       if (this.msgList) {
         this.msgList.forEach(item => {
           temp.push(item);
-          // console.log(item);
+           console.log(item);
         });
       }
       this.errorList.emit(temp);
