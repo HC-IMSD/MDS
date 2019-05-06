@@ -2,10 +2,13 @@
   <form [formGroup]="dossierForm" novalidate>
     <!-- we will place our fields here -->
     <div>
+      <span id="privacy"></span>
+      <span id="instructions"></span>
       <aside class="wb-fnote" role="note">
         <h2>{{'instruction.help'|translate}}</h2>
         <section><dossier-help-en></dossier-help-en></section>
       </aside>
+      <span id="main"></span>
       <div>
         <section class="panel panel-primary mrgn-tp-lg">
           <header class="panel-heading clearfix">
