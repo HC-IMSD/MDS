@@ -44,11 +44,12 @@
                                   [showError]="showFieldErrors"
                                   [control]="adminChangesFormLocalModel.controls.licenceNumbers"
                                   controlId="licenceNumbers" label="all.licence.num" parentId="adminChangesDetails"
-                                  parentLabel="Admin Changes"></control-messages>
-                <textarea type="text" id="licenceNumbers" class="form-control full-width" (blur)="onblur()"
-                       formControlName="licenceNumbers" maxlength="4000">
-                </textarea>
+                                  parentLabel="Admin Changes">
+                </control-messages>
               </label>
+              <textarea type="text" id="licenceNumbers" class="form-control full-width" (blur)="onblur()"
+                       formControlName="licenceNumbers" maxlength="4000">
+              </textarea>
             </div>
           </div>
         </div>
