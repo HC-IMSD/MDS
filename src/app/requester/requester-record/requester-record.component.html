@@ -8,10 +8,10 @@
                    (errorList)="updateErrorList($event)" (saveRecord)="saveRequesterRecord($event)"></requester-details>
 
   <div class="row">
-    <div class="btn-group-sm col-xs-12 text-left">
+    <div class="btn-group-sm col-xs-12">
       <!--<button class="btn btn-primary" (click)="saveRequesterRecord()" i18n>{{'save.requester'|translate}}</button>-->
-      <button class="btn btn-danger" (click)="deleteRequesterRecord()" i18n>{{'delete.requester'|translate}}</button>
-      <button class="btn btn-default" (click)="revertRequesterRecord()" i18n>{{'discard.changes'|translate}}</button>
+      <button class="btn btn-danger mrgn-rght-md mrgn-tp-sm" (click)="deleteRequesterRecord()" i18n>{{'delete.requester'|translate}}</button>
+      <button class="btn btn-default mrgn-tp-sm" (click)="revertRequesterRecord()" i18n>{{'discard.changes'|translate}}</button>
     </div>
   </div>
 
